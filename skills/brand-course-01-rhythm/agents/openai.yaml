@@ -1,0 +1,4 @@
+interface:
+  display_name: "开篇节奏感"
+  short_description: "帮助用户校准认知、战略、运营、业务的起步顺序，先判断什么该先想清楚"
+  default_prompt: "使用 $brand-course-01-rhythm，用中文判断一个品牌现在是节奏错了、顺序乱了，还是已经可以进入下一步。"

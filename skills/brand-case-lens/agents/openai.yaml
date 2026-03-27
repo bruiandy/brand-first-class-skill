@@ -1,0 +1,4 @@
+interface:
+  display_name: "品牌案例透镜"
+  short_description: "用品牌基本盘方法拆解真实案例、内容机会与判断边界"
+  default_prompt: "Use $brand-case-lens to analyze a real brand case in Chinese and explain what the framework can and cannot judge yet."

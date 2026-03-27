@@ -1,0 +1,4 @@
+interface:
+  display_name: "品牌方法总控"
+  short_description: "作为品牌课程总入口，接住问题、判断意图并路由到对应章节 skill"
+  default_prompt: "使用 $brand-method-hub，用中文判断一个品牌问题应该进入哪一节课或哪支支持型 skill，并保持整套方法主线一致。"

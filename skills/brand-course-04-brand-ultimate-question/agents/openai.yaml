@@ -1,0 +1,4 @@
+interface:
+  display_name: "品牌终极之问"
+  short_description: "帮助用户从初心出发梳理愿景、使命、价值观，先把品牌最底层的命题说清楚"
+  default_prompt: "使用 $brand-course-04-brand-ultimate-question，用中文帮助一个品牌梳理初心、愿景、使命、价值观，并指出还没想清楚的地方。"

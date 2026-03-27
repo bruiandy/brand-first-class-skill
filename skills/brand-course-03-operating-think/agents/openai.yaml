@@ -1,0 +1,4 @@
+interface:
+  display_name: "经营思维"
+  short_description: "帮助用户从品类、渠道、团队、毛利四个顶层元素判断经营现实和可行路径"
+  default_prompt: "使用 $brand-course-03-operating-think，用中文判断一个品牌的经营现实，给出更可行的增长路径和暂时不该做的动作。"
