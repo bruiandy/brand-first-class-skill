@@ -43,6 +43,7 @@ Read [references/case-analysis.md](references/case-analysis.md) for how to choos
 - If a case is mostly operating or channel-driven, do not force a brand-only interpretation.
 - Include at least one sentence about the preconditions that make the move work.
 - If the framework is only partially useful here, say so explicitly.
+- If the material is thin, keep the reading preliminary instead of forcing a full, confident interpretation.
 
 ## Default Output Shape
 
