@@ -7,7 +7,7 @@
 
 ## 这是什么？
 
-这是《品牌第一课》课程内容的结构化 AI 封装版，包含 **11 个独立 Skill 模块**，可在支持 Skill 系统的 AI 工具（如 Claude Code、Antigravity 等）中直接调用。
+这是《品牌第一课》课程内容的结构化 AI 封装版，包含 **11 个独立 Skill 模块**，可在支持 Skill 系统的 AI 工具（如 Codex、Claude Code、Antigravity 等）中直接调用。
 
 每个 Skill 都包含：课程方法论精华 + 对话引导逻辑 + 章节路由指引，让 AI 真正"读懂"这套方法论，而不只是搜索关键词。
 
@@ -18,13 +18,19 @@
 ### 方式一：克隆到本地使用
 
 ```bash
-git clone https://github.com/bruiandy/品牌经营基本功.git
+git clone https://github.com/bruiandy/品牌经营基本功-skill.git
 ```
 
-克隆完成后，将 `skills/` 文件夹复制到你项目的 `.claude/` 目录下，即可在 Claude Code 中直接调用：
+克隆完成后，将 `skills/` 文件夹复制到你项目的 Skill 目录下即可：
 
 ```bash
-cp -r 品牌经营基本功/skills/ 你的项目路径/.claude/skills/
+cp -r 品牌经营基本功-skill/skills/. 你的项目路径/.codex/skills/
+```
+
+如果你使用 Claude Code，则复制到 `.claude/skills/`：
+
+```bash
+cp -r 品牌经营基本功-skill/skills/. 你的项目路径/.claude/skills/
 ```
 
 ### 方式二：手动引用单个 Skill
@@ -32,8 +38,10 @@ cp -r 品牌经营基本功/skills/ 你的项目路径/.claude/skills/
 只需要某一节？直接把对应的 Skill 文件夹复制进去即可，例如只用品牌叙事那节：
 
 ```bash
-cp -r 品牌经营基本功/skills/brand-course-05-brand-narrative-system 你的项目路径/.claude/skills/
+cp -r 品牌经营基本功-skill/skills/brand-course-05-brand-narrative-system 你的项目路径/.codex/skills/
 ```
+
+Claude Code 用户把目标目录替换成 `.claude/skills/` 即可。
 
 ---
 
