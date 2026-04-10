@@ -1,0 +1,4 @@
+interface:
+  display_name: "品牌基本盘诊断"
+  short_description: "围绕资源、经营、品牌与闭环做中文互动诊断与优先级判断"
+  default_prompt: "Use $brand-foundation-diagnosis to analyze my brand case in Chinese and guide me through the next questions."

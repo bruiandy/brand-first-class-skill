@@ -1,0 +1,4 @@
+interface:
+  display_name: "品牌叙事体系"
+  short_description: "帮助用户把品牌底层命题落成定位、命名、Slogan、视觉符号和关键触点"
+  default_prompt: "使用 $brand-course-05-brand-narrative-system，用中文梳理一个品牌的话语体系，判断定位、命名、Slogan 和关键触点是否在讲同一件事。"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "盘资源"
+  short_description: "帮助用户按创始人、团队、运营基础三大维度盘资源，找到最值得放大的不公平优势"
+  default_prompt: "使用 $brand-course-02-resource-scan，用中文盘清一个品牌的资源底盘，判断应该聚焦哪张牌、暂缓哪些方向。"

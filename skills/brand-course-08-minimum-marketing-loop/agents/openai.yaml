@@ -1,0 +1,4 @@
+interface:
+  display_name: "最小营销闭环"
+  short_description: "帮助用户聚焦单渠道、单人群、单卖点，先跑通第一个可盈利循环再放大"
+  default_prompt: "使用 $brand-course-08-minimum-marketing-loop，用中文判断一个品牌该先验证哪条最小闭环，以及现在最薄弱的一环在哪里。"

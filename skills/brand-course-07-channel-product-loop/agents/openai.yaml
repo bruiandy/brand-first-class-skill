@@ -1,0 +1,4 @@
+interface:
+  display_name: "产品×渠道闭环"
+  short_description: "帮助用户从渠道逻辑倒推产品规格、价格和承接方式，先打透一个更匹配的渠道"
+  default_prompt: "使用 $brand-course-07-channel-product-loop，用中文判断一个品牌的产品和渠道是否匹配，应该先打哪个渠道，以及规格和价格要不要调整。"

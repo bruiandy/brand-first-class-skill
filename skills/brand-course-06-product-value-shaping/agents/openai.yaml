@@ -1,0 +1,4 @@
+interface:
+  display_name: "产品价值塑造"
+  short_description: "帮助用户用 JTBD 和价值公式梳理产品价值，判断叙事和体验是否真的对得上"
+  default_prompt: "使用 $brand-course-06-product-value-shaping，用中文分析一个产品到底解决了用户什么任务，它的主卖点、叙事和体验是否一致。"
