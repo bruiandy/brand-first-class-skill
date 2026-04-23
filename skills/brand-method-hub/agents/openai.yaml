@@ -1,0 +1,4 @@
+interface:
+  display_name: "品牌方法总控"
+  short_description: "查看品牌第一课 Skill 工作流、Artifact 链和下一步路由"
+  default_prompt: "Use $brand-method-hub to inspect where I am in the brand-first-class workflow and recommend the next skill."

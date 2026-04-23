@@ -7,9 +7,11 @@
 
 ## 这是什么？
 
-这是《品牌第一课》课程内容的结构化 AI 封装版，包含 **11 个独立 Skill 模块**，可在支持 Skill 系统的 AI 工具（如 Codex、Claude Code、Antigravity 等）中直接调用。
+这是《品牌第一课》课程内容的结构化 AI 封装版，包含 **12 个独立 Skill 模块**，可在支持 Skill 系统的 AI 工具（如 Codex、Claude Code、Antigravity 等）中直接调用。
 
 每个 Skill 都包含：课程方法论精华 + 对话引导逻辑 + 章节路由指引，让 AI 真正"读懂"这套方法论，而不只是搜索关键词。
+
+说明：对外网站可以使用 `6 个品牌经营基本功` 作为传播结构；Skill 系统不按网站结构走，而按课程产品本体走，也就是 `开篇 + 7 个章节`。
 
 ---
 
@@ -18,19 +20,19 @@
 ### 方式一：克隆到本地使用
 
 ```bash
-git clone https://github.com/bruiandy/品牌经营基本功-skill.git
+git clone https://github.com/bruiandy/brand-first-class-skill.git
 ```
 
 克隆完成后，将 `skills/` 文件夹复制到你项目的 Skill 目录下即可：
 
 ```bash
-cp -r 品牌经营基本功-skill/skills/. 你的项目路径/.codex/skills/
+cp -r brand-first-class-skill/skills/. 你的项目路径/.codex/skills/
 ```
 
 如果你使用 Claude Code，则复制到 `.claude/skills/`：
 
 ```bash
-cp -r 品牌经营基本功-skill/skills/. 你的项目路径/.claude/skills/
+cp -r brand-first-class-skill/skills/. 你的项目路径/.claude/skills/
 ```
 
 ### 方式二：手动引用单个 Skill
@@ -38,7 +40,7 @@ cp -r 品牌经营基本功-skill/skills/. 你的项目路径/.claude/skills/
 只需要某一节？直接把对应的 Skill 文件夹复制进去即可，例如只用品牌叙事那节：
 
 ```bash
-cp -r 品牌经营基本功-skill/skills/brand-course-05-brand-narrative-system 你的项目路径/.codex/skills/
+cp -r brand-first-class-skill/skills/brand-course-05-brand-narrative-system 你的项目路径/.codex/skills/
 ```
 
 Claude Code 用户把目标目录替换成 `.claude/skills/` 即可。
@@ -47,7 +49,7 @@ Claude Code 用户把目标目录替换成 `.claude/skills/` 即可。
 
 ## 系统结构
 
-共 **11 个 Skill 模块**，分三层架构：
+共 **12 个 Skill 模块**，分三层架构：
 
 ```
 品牌第一课｜从这里开始（品牌第一课-从这里开始）  ← 安装后先用这个入口
@@ -60,9 +62,10 @@ Claude Code 用户把目标目录替换成 `.claude/skills/` 即可。
 │   ├── 06 · 第五节：产品价值塑造
 │   ├── 07 · 第六节：产品×渠道闭环
 │   └── 08 · 第七节：构建最小营销闭环
-└── 支撑工具层（2 个随时可调用）
+└── 支撑工具层（3 个随时可调用）
     ├── 品牌基础诊断（brand-foundation-diagnosis）
-    └── 案例拆解镜头（brand-case-lens）
+    ├── 案例拆解透镜（brand-case-lens）
+    └── 品牌方法总控（brand-method-hub）
 ```
 
 ---
@@ -81,9 +84,9 @@ Claude Code 用户把目标目录替换成 `.claude/skills/` 即可。
 |-------|------|-----------|
 | `brand-course-01-rhythm` | 开篇 | 认知→战略→运营→业务，四步节奏感 |
 | `brand-course-02-resource-scan` | 第一节 | 盘资源三维度 + 真优势三问 |
-| `brand-course-03-operating-think` | 第二节 | 品类×渠道×团队×毛利，五元素经营框架 |
+| `brand-course-03-operating-think` | 第二节 | 品类×渠道×团队×品牌×毛利，五维经营联动 |
 | `brand-course-04-brand-ultimate-question` | 第三节 | 愿景使命价值观（VMV）实战化追问 |
-| `brand-course-05-brand-narrative-system` | 第四节 | 定位→命名→Slogan→视觉→触点，五层叙事体系 |
+| `brand-course-05-brand-narrative-system` | 第四节 | 初心→价值体系→视觉体系→服务体系，品牌一致性 |
 | `brand-course-06-product-value-shaping` | 第五节 | JTBD + 产品价值 = 动人叙事 × 超预期体验 |
 | `brand-course-07-channel-product-loop` | 第六节 | 反向渠道逻辑，四层产品×渠道匹配判断 |
 | `brand-course-08-minimum-marketing-loop` | 第七节 | 单渠道+单人群+单卖点，最小可盈利闭环 |
@@ -93,7 +96,8 @@ Claude Code 用户把目标目录替换成 `.claude/skills/` 即可。
 | Skill | 功能 |
 |-------|------|
 | `brand-foundation-diagnosis` | 互动式品牌诊断：真实案例 / 问卷筛选 / 合作支持，三种对话模式 |
-| `brand-case-lens` | 案例拆解：资源 / 经营 / 品牌 / JTBD / 闭环，五种分析镜头 |
+| `brand-case-lens` | 案例拆解：资源 / 经营 / 品牌 / JTBD / 闭环，五种分析透镜 |
+| `brand-method-hub` | 方法总控：查看课程工作流、Artifact 链和下一步路由 |
 
 ---
 
@@ -137,6 +141,10 @@ AI 会通过 5-6 个核心问题，判断潜在客户的阶段、资源禀赋、
 
 调用对应章节 Skill → 结合客户真实情况，给出阶段性建议、备忘录或下一步行动清单。
 
+### 场景四：检查方法链路
+
+调用 `brand-method-hub` → 检查你现在已有哪几份沟通纪要，判断下一步应该进入哪一节。
+
 ---
 
 ## 核心设计原则
@@ -166,7 +174,7 @@ AI 会通过 5-6 个核心问题，判断潜在客户的阶段、资源禀赋、
 **方法论主轴：**
 
 ```
-盘资源 → 看经营 → 聚焦真优势 → 建品牌叙事 → 塑造产品价值 → 跑通营销闭环
+校准节奏 → 盘资源 → 看经营 → 品牌终极之问 → 建品牌叙事 → 塑造产品价值 → 产品渠道闭环 → 跑通营销闭环
 ```
 
 ---

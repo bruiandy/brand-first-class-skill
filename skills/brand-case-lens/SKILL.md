@@ -3,49 +3,140 @@ name: brand-case-lens
 description: "当中文用户想用这套品牌方法论来拆解真实案例、文章草稿、社交媒体内容选题或市场观察，并且希望先选 1-2 个最相关视角而不是把框架硬套到所有问题上时，使用这个 skill。"
 ---
 
-# Brand Case Lens
+# 品牌案例透镜
 
-## Overview
+## 概览
 
-This skill turns the course methodology into a content and case-analysis lens. Use it when the goal is not to diagnose an internal team live, but to interpret an external case, extract reusable insight, or generate consistent Chinese content with a clear inner logic.
+这支 skill 把品牌第一课的方法论变成案例拆解和内容选题透镜。它不是用来诊断用户自己的内部团队，而是用来理解外部品牌案例、市场动作、文章草稿、社交媒体选题或公开观察，并提炼可复用的判断。
 
-## Start Here
+## 协议层
 
-- Work in Chinese unless the user asks otherwise.
-- Start from the material at hand: article, launch note, screenshot, campaign, product page, founder quote, interview, or a short case summary.
-- Pick 1-2 lenses first. Expand only when the evidence supports it.
-- The output should sound grounded, not omniscient.
+这支 skill 保留原有案例拆解逻辑，同时遵守品牌第一课的统一工作流协议：先轻分诊，再选择透镜，证据足够后输出案例拆解纪要或内容角度。
 
-## Lens Selection
+### 协议目标
 
-- Resource lens
-- Operating lens
-- Brand lens
-- Product / JTBD lens
-- Closed-loop lens
+- 不把案例拆解变成万能框架套用，而是先判断这个案例最适合用哪 1-2 个视角看。
+- 信息不足时，只输出初步判断和证据缺口，不强行做完整拆解。
+- 不把所有成功都归因于品牌，也不把所有动作都解释成课程框架的证明。
+- 证据足够时，必须明确输出：这个案例真正值得学什么、不能误学什么、还不能判断什么。
+
+### 统一工作原则
+
+- 第一次回应必须先做 `轻分诊`：判断材料类型、最相关透镜、证据是否足够。
+- 第一轮最多追问 1-2 个高杠杆问题，不要一次列出长问卷。
+- 只要材料证据不足，所有判断都要标注为“初步判断”，不能把推测说成结论。
+- 进入 `深诊断` 后，每一轮只推进一个案例判断，不要把五个透镜全部硬套一遍。
+- 达到收束条件后，不要继续泛聊，必须输出案例拆解的正式结果。
+
+### 模式分层
+
+这支 skill 默认支持 3 个 mode，不需要用户手动选择，由信息充分程度自动进入：
+
+1. `轻分诊模式`
+   - 适合用户只给一个案例、截图、文章片段或市场观察。
+   - 输出初步判断、最适合的 1-2 个透镜、还缺什么证据。
+2. `深诊断模式`
+   - 适合材料已经比较充分，需要进入案例拆解。
+   - 输出资源、经营、品牌、产品、闭环中的关键判断和不能误学的地方。
+3. `正式交付模式`
+   - 适合证据已经足够，可以收束成内容或案例结论。
+   - 输出正式 `案例拆解纪要` 或指定内容形式。
+
+### 输入协议
+
+- 如果用户给了文章、截图、campaign、产品页、创始人访谈、社媒内容或案例摘要，先整理已知事实。
+- 如果用户已经指定想从某一节课视角拆解，就优先读取对应课程逻辑，但仍要检查是否真的命中。
+- 如果材料不足，要先补齐：
+  - 案例主体是谁
+  - 发生了什么动作
+  - 用户想用这个案例回答什么问题
+  - 目前有哪些公开证据
+
+### 沟通流程
+
+1. `轻分诊`
+   - 判断材料更适合资源透镜、经营透镜、品牌透镜、产品 / JTBD 透镜，还是闭环透镜。
+   - 不直接输出完整文章或结论。
+2. `深诊断`
+   - 只选 1-2 个最相关透镜做拆解。
+   - 同时说明这个判断成立的前提，以及目前还不能判断的部分。
+3. `收束输出`
+   - 当案例判断足够清楚时，输出 `案例拆解纪要`、短内容、长文大纲或对比分析。
+
+### 收束条件
+
+只有满足下面条件，才输出正式案例结论：
+
+- 已经能判断最相关的 1-2 个透镜
+- 已经能区分已知事实、判断推测和仍需确认
+- 已经能说清这个案例真正值得学什么
+- 已经能说清普通品牌最容易误学什么
+- 已经能说明判断成立的前提和不能下结论的部分
+
+如果这些条件还不成立，就继续追问或只输出初步判断。
+
+### 正式产物
+
+这支 skill 的正式产物统一叫：
+
+`案例拆解纪要`
+
+正式输出必须遵守统一外壳：当前判断、关键依据、当前最重要的主线 / 矛盾 / 优先级、当前不要做什么、下一步建议、可供后续内容继续使用的关键结论。
+
+固定结构：
+
+1. 案例基本事实
+2. 最适合使用的 1-2 个透镜
+3. 这个案例最值得看的不是
+4. 真正值得学的判断
+5. 成立前提
+6. 普通品牌不要误学什么
+7. 目前还不能判断的部分
+8. 如果写成内容，最适合的角度
+
+### 衔接规则
+
+- 如果案例其实是在诊断用户自己的真实业务，要切回 `brand-foundation-diagnosis` 或对应课程 skill。
+- 如果案例拆解后发现最核心问题属于某一节课，要明确提示可以进入对应 lesson skill 做深。
+- 不允许把案例强行套满全部课程框架；最多先选 1-2 个最有证据支撑的透镜。
+
+## 开始方式
+
+- 默认使用中文，除非用户明确要求其他语言。
+- 从用户手上的材料开始：文章、发布信息、截图、campaign、产品页、创始人表达、访谈或简短案例摘要。
+- 先选 1-2 个透镜，证据支持时再扩展。
+- 输出要具体、接地气，不要像全知视角复盘成功学。
+
+## 透镜选择
+
+- 资源透镜
+- 经营透镜
+- 品牌透镜
+- 产品 / JTBD 透镜
+- 闭环透镜
 
 Read [references/core-framework.md](references/core-framework.md) for the shared framework.  
 Read [references/case-analysis.md](references/case-analysis.md) for how to choose lenses and structure outputs.
 
-## Output Types
+## 输出类型
 
-- Short insight post
-- Long-form article outline
-- Case dissection memo
-- Comparison between two brands or two moves
-- "What this case really tells us" note
+- 短内容洞察
+- 长文大纲
+- 案例拆解纪要
+- 两个品牌或两个动作的对比
+- “这个案例真正说明了什么”笔记
 
-## Guardrails
+## 使用边界
 
-- Avoid hindsight bias. Do not act like every success was obvious.
-- Avoid hero narrative. Tactics without context are not the real lesson.
-- Always include what cannot yet be judged from the evidence.
-- If a case is mostly operating or channel-driven, do not force a brand-only interpretation.
-- Include at least one sentence about the preconditions that make the move work.
-- If the framework is only partially useful here, say so explicitly.
-- If the material is thin, keep the reading preliminary instead of forcing a full, confident interpretation.
+- 避免事后诸葛亮，不要把每个成功都说成早就注定。
+- 避免英雄叙事，脱离资源和经营前提的战术不是关键经验。
+- 必须说明目前证据还不能判断什么。
+- 如果案例主要是经营或渠道驱动，不要强行解释成品牌打法。
+- 至少说清一个成立前提。
+- 如果框架只能解释一部分，要明确说出来。
+- 如果材料很薄，只能做初步判断，不要硬给完整结论。
 
-## Default Output Shape
+## 默认输出结构
 
 - 这个案例最值得看的不是……
 - 按这套方法论，最该看的 1-2 个问题是……
@@ -54,7 +145,7 @@ Read [references/case-analysis.md](references/case-analysis.md) for how to choos
 - 不要误学的表面动作
 - 如果把它写成内容，最适合的角度是什么
 
-## Resources
+## 参考资料
 
-- [references/core-framework.md](references/core-framework.md): shared principles and lens selection spine
-- [references/case-analysis.md](references/case-analysis.md): content angles, output patterns, and anti-overfit rules
+- [references/core-framework.md](references/core-framework.md): 共享方法主线和透镜选择
+- [references/case-analysis.md](references/case-analysis.md): 内容角度、输出模式和防过度拟合规则

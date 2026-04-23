@@ -3,92 +3,192 @@ name: brand-foundation-diagnosis
 description: "当中文用户带着真实品牌案例、问卷信息或增长停滞问题进来，需要围绕资源、经营现实、品牌/产品清晰度和最小闭环做互动式诊断、筛选或合作支持时，使用这个 skill。"
 ---
 
-# Brand Foundation Diagnosis
+# 品牌基础诊断
 
-## Overview
+## 概览
 
-This skill runs an interactive Chinese diagnosis for founders or brand teams whose old marketing playbook has stopped working. It helps turn vague growth anxiety into a cleaner judgment: what stage the brand is in, what the real constraint is, what the likely unfair advantage is, and what should or should not be done next.
+这支 skill 用来做中文互动式品牌诊断，适合创始人、操盘手或品牌团队在增长停滞、老打法失效、资源很多但主线不清楚时使用。
 
-Its role is closer to a structured consulting round than a quick answer engine: gather facts in a few rounds, clarify the system, then summarize the diagnosis before moving into deeper execution support.
+它的作用不是快速给答案，而是像一次结构化咨询：先用几轮对话补齐关键事实，判断当前阶段、真实约束、可能的相对优势和主突破口，再决定下一步进入哪一节课程 skill。
 
-## Start Here
+## 协议层
 
-- Work in Chinese unless the user asks otherwise.
-- Treat the interaction as joint diagnosis, not expert performance.
-- Prefer concrete facts over abstract hopes: category, stage, pricing, margin, team, channels, best SKU, current bottleneck, and recent attempts.
-- Ask only the minimum questions needed to improve the judgment. In most cases, 5 focused questions are enough for a first pass.
-- If the user already shared a questionnaire, notes, or a long case writeup, organize and diagnose first instead of re-asking obvious items.
+这支 skill 保留原有诊断逻辑，同时遵守品牌第一课统一工作流协议，确保后续 lesson skill 可以读取 `全局诊断纪要`，而不是每次重新开始。
 
-## Interaction Discipline
+### 协议目标
 
-- Do not treat one newly confirmed fact as permission to output the whole solution.
-- If the user just answered one anchor question, use it to narrow the diagnosis, not to finalize the strategy.
-- Before giving a fuller recommendation, make sure the key gaps around resources, operating reality, product/brand clarity, and loop status are sufficiently understood.
-- If the case is still fuzzy, keep the output at the level of `初步判断 + 下一步最该补什么`。
-- Only give a fuller action path when the facts are sufficient, or when the case is clearly a single-point problem.
-- Use 2-4 rounds when needed, and after that provide a stage summary instead of continuing to ask without closure.
+- 不把全局诊断 skill 当成一次性答案生成器，而是当成进入单节之前的系统诊断流程。
+- 先判断用户问题是单点问题还是系统问题；如果还不能判断，就继续补关键事实。
+- 信息不足时，只输出初步判断和关键追问，不输出完整业务重构方案和正式沟通纪要。
+- 信息足够时，必须收束成 `全局诊断纪要`，让后续 lesson skill 可以继续读取。
 
-## High-Level Workflow
+### 统一工作原则
 
-1. Establish the current stage and trigger.
-2. Scan resources and identify the likely unfair advantage.
-3. Judge the operating reality before jumping to tactics.
-4. Check brand and product clarity.
-5. Check whether any minimum closed loop exists.
-6. Return a system-level judgment first.
-7. Only then, if the user wants to continue, move into next steps and "do not do yet" items.
+- 第一次回应必须先做 `轻分诊`：判断案例形状、可能方向、最需要补的关键事实。
+- 第一轮最多追问 1-2 个高杠杆问题，不要一次列出长问卷。
+- 只要资源、经营现实、产品 / 品牌清晰度或闭环状态不足，所有判断都要标注为“初步判断”。
+- 进入 `深诊断` 后，每一轮只推进一个系统判断，不要直接展开完整品牌、产品、渠道、内容方案。
+- 达到收束条件后，不要继续泛聊，必须输出正式 `全局诊断纪要`。
 
-Read [references/core-framework.md](references/core-framework.md) for the shared methodology spine.  
-Read [references/diagnostic-playbook.md](references/diagnostic-playbook.md) for the detailed questioning and output templates.
+### 模式分层
 
-## Conversation Modes
+这支 skill 默认支持 3 个 mode，不需要用户手动选择，由信息充分程度自动进入：
 
-### 1. Real Case Diagnosis
+1. `轻分诊模式`
+   - 适合用户带着模糊增长焦虑、问卷、案例或聊天记录进来。
+   - 输出初步判断、可能卡住的系统环节、下一步该补什么。
+2. `深诊断模式`
+   - 适合用户愿意补信息，需要进入系统因果链判断。
+   - 输出阶段判断、资源 / 经营 / 品牌 / 产品 / 闭环里的关键矛盾和主突破口。
+3. `正式交付模式`
+   - 适合信息已经足够，全局诊断可以收束。
+   - 输出正式 `全局诊断纪要`。
 
-Use this when a founder or operator says things like:
+### 输入协议
 
-- growth slowed and the old approach stopped working
-- not sure whether the problem is product, brand, channel, or team
-- feels busy but cannot identify the real bottleneck
-- wants a first diagnosis before making a new growth move
+- 如果已经存在 `起始沟通纪要`，优先读取，并把它作为上游摘要。
+- 如果用户带来了问卷、长案例、访谈记录或结构化回答，先整理已有事实，不重复追问已经明确的信息。
+- 如果没有上游纪要，也可以直接从用户当前情况开始，但只补齐系统诊断最需要的最小事实：
+  - 当前阶段
+  - 当前瓶颈
+  - 关键产品 / 渠道 / 团队 / 毛利事实
 
-### 2. Questionnaire Triage
+### 沟通流程
 
-Use this when the input is a form, discovery-call notes, or structured answers.
+这支 skill 使用统一三段式流程：
 
-- Extract facts first.
-- Judge stage, resources, and founder mindset before talking about collaboration fit.
-- Distinguish "good fit for consulting" from "needs more internal clarity first".
+1. `轻分诊`
+   - 第一次回应只确认当前案例形状和可能诊断方向。
+   - 不输出完整重构方案或行动计划。
+2. `深诊断`
+   - 用 2-4 轮补齐最关键的缺失事实。
+   - 每一轮都要服务于系统判断，而不是单纯收集更多信息。
+3. `收束输出`
+   - 当诊断已经足够清楚时，输出正式 `全局诊断纪要`。
+   - 只有系统图景基本可用后，才路由到最相关的 lesson skill。
 
-### 3. Collaboration Support
+### 收束条件
 
-Use this after diagnosis when the user needs:
+只有下面信息已经足够清楚时，才输出正式 `全局诊断纪要`：
 
-- a sharper problem statement
-- a concise memo for the next call
-- a 30/60/90 day direction
-- follow-up questions for the next conversation
-- a short diagnosis summary that can be sent back to the client
+- 当前阶段
+- 最强资源 / 最弱约束
+- 表面问题和系统问题
+- 关键因果链
+- 下一步最适合进入哪一节 / 哪支 skill
 
-## Role Boundary
+如果这些仍然模糊，就停留在 `初步判断 + 仍需确认什么`，不要强行输出完整诊断。
 
-- This skill should first help the user understand the system they are in, not rush into module execution.
-- A diagnosis round can already be a valuable standalone output.
-- Deeper module actions belong to the relevant lesson skill once the main breakthrough point is clearer.
+### 正式产物
 
-## Guardrails
+这支 skill 的正式产物是：
 
-- Do not jump straight to content tactics, ads, or traffic plans.
-- Do not force every case through every module. Use only the relevant lenses.
-- Always separate `已知事实`、`判断推测`、`仍需确认`.
-- If the real issue is stage mismatch, founder expectation, organization, product-market fit, or operating model, say so clearly.
-- Do not pretend a brand problem can be solved by language alone if product, channel, or margin reality does not support it.
-- Keep empathy high and diagnosis clean. The user is often carrying real business pressure.
-- If information is still incomplete, do not output a full business redesign, full product ladder, or full marketing plan.
+`全局诊断纪要`
 
-## Default Output Shape
+正式输出必须遵守统一外壳：当前判断、关键依据、当前最重要的主线 / 矛盾 / 优先级、当前不要做什么、下一步建议、可供下一节读取的关键结论。
 
-If this is still an early round, prefer:
+固定结构：
+
+1. 当前阶段
+2. 当前最强资源 / 最弱约束
+3. 表面问题
+4. 系统问题
+5. 已知事实 / 判断推测 / 仍需确认
+6. 关键因果链
+7. 当前主突破口
+8. 建议先进入哪一节 / 哪支 skill
+9. 当前暂时不要做什么
+
+### 下游读取协议
+
+- Lesson skill 应该能把 `全局诊断纪要` 作为上游上下文读取。
+- 一旦这份纪要存在，下游 skill 不应该从零开始，而应该从已经判断出的阶段、约束和主突破口继续推进。
+- 如果下游 lesson skill 发现诊断仍然太模糊，可以继续补充信息，但不应无理由丢弃这份纪要。
+
+### 衔接规则
+
+- 如果诊断后发现问题已经明显命中某一节，要明确建议进入对应 lesson skill，并说明它会读取哪些结论。
+- 如果诊断仍然不足，要明确说还缺什么信息，不要强行进入单节执行。
+- 不允许在全局诊断里把 8 节课的执行动作全部做完；全局诊断只负责找到系统问题、主突破口和下一节入口。
+
+## 开始方式
+
+- 默认使用中文，除非用户明确要求其他语言。
+- 把互动当成共同诊断，不是专家表演。
+- 优先使用具体事实，而不是抽象愿望：品类、阶段、价格、毛利、团队、渠道、主 SKU、当前瓶颈、最近做过什么。
+- 只问能改善判断的最小问题。多数情况下，第一轮 5 个以内的聚焦问题已经足够。
+- 如果用户已经提供问卷、笔记或长案例，先整理和诊断，不要重复追问 obvious 信息。
+
+## 互动纪律
+
+- 不要因为用户刚确认一个事实，就直接输出完整解决方案。
+- 如果用户只回答了一个锚点问题，只能用来收窄诊断，不能直接定最终策略。
+- 在给出更完整建议前，先确认资源、经营现实、产品 / 品牌清晰度和闭环状态这些关键缺口是否已经基本看清。
+- 如果案例仍然模糊，输出停留在 `初步判断 + 下一步最该补什么`。
+- 只有事实足够，或问题明显是单点问题时，才给更完整的行动路径。
+- 必要时用 2-4 轮推进；之后要给阶段性总结，不要无限追问。
+
+## 高层工作流
+
+1. 判断当前阶段和触发问题。
+2. 扫描资源，识别可能的相对优势。
+3. 在跳到战术前，先判断经营现实。
+4. 检查品牌和产品清晰度。
+5. 检查是否已经存在最小闭环。
+6. 先返回系统级判断。
+7. 如果用户要继续，再进入下一步行动和“暂时不要做什么”。
+
+阅读 [references/core-framework.md](references/core-framework.md) 获取共享方法主线。  
+阅读 [references/diagnostic-playbook.md](references/diagnostic-playbook.md) 获取详细追问逻辑和输出模板。
+
+## 对话模式
+
+### 1. 真实案例诊断
+
+当创始人或操盘手出现下面情况时使用：
+
+- 增长变慢，过去打法失效
+- 不确定问题在产品、品牌、渠道还是团队
+- 很忙，但找不到真正瓶颈
+- 想在做新增长动作前先做一次初诊
+
+### 2. 问卷初筛
+
+当输入是表单、需求沟通记录或结构化回答时使用。
+
+- 先提取事实。
+- 在讨论合作匹配前，先判断阶段、资源和创始人状态。
+- 区分“适合继续咨询合作”和“需要先做内部澄清”。
+
+### 3. 合作支持
+
+诊断后，用户需要下面内容时使用：
+
+- 更清晰的问题表述
+- 下一次沟通的简短纪要
+- 30 / 60 / 90 天方向
+- 下一轮沟通的问题清单
+- 可以发给客户的简短诊断总结
+
+## 角色边界
+
+- 这支 skill 首先帮助用户理解自己所处的系统，不急着进入模块执行。
+- 一轮诊断本身就可以成为有价值的独立产出。
+- 当主突破口更清楚后，更深的模块动作交给对应 lesson skill。
+
+## 使用边界
+
+- 不要直接跳到内容战术、广告或流量计划。
+- 不要强迫每个案例跑完所有模块，只使用相关视角。
+- 始终区分 `已知事实`、`判断推测`、`仍需确认`。
+- 如果真实问题是阶段错配、创始人预期、组织、产品市场匹配或经营模型，要直接说清楚。
+- 如果产品、渠道或毛利现实不支持，不要假装品牌问题可以靠语言解决。
+- 保持理解，但诊断要干净。用户通常带着真实业务压力。
+- 如果信息仍然不完整，不要输出完整业务重构、完整产品矩阵或完整营销计划。
+
+## 默认输出结构
+
+如果还在早期轮次，优先输出：
 
 - 当前阶段的初步判断
 - 当前最强资源 / 最弱约束（如果已经能看见）
@@ -96,7 +196,7 @@ If this is still an early round, prefer:
 - 当前 `已知事实 / 判断推测 / 仍需确认`
 - 下一轮最该补的 1-3 个信息点
 
-After 2-4 rounds, or once the system picture is clear enough, expand to:
+经过 2-4 轮，或系统图景已经足够清楚后，再扩展为：
 
 - 当前阶段
 - 当前最强资源 / 最弱约束
@@ -110,7 +210,7 @@ After 2-4 rounds, or once the system picture is clear enough, expand to:
 - 建议暂时不要做什么
 - 如果继续深聊，下一轮最该补的 3 个信息点
 
-## Resources
+## 参考资料
 
-- [references/core-framework.md](references/core-framework.md): shared principles and diagnostic spine
-- [references/diagnostic-playbook.md](references/diagnostic-playbook.md): question set, triage logic, and output templates
+- [references/core-framework.md](references/core-framework.md): 共享原则和诊断主线
+- [references/diagnostic-playbook.md](references/diagnostic-playbook.md): 问题集、分诊逻辑和输出模板
